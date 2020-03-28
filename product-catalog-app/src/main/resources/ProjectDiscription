@@ -1,0 +1,34 @@
+Description about the Project Product-Catalog:
+The project has been developed using Spring Boot framework with RestFul WebServices.
+
+Information Related to Data base:
+Project uses in build memory db h2 for data base.
+Project has been provided with data.sql and schema.sql file to load data in the database while project initiation itself.
+Url to access h2 database integrated with application is : http://localhost:9999/product-catalog/h2-console
+Data injestion for bulk upload can be achieved via API which is not in scope of this project.If user wants to insert rows in db it can be done inserting more insert statement in data.sql.
+
+Information Related to endpoint exposure:
+The Project is integrated with Swagger which can be accessed at below Given Url
+Swagger Url:http://localhost:9999/product-catalog/swagger-ui.html
+EndPoint exposed through the Application can be viewed on Swagger.
+
+Some of the enpoints exposed in application are given below:
+1.http://localhost:9999/product-catalog/products -->It is used to get all the products.
+
+2.http://localhost:9999/product-catalog/products/brands -->It is used to fetch products on the basis of brands.
+
+3.http://localhost:9999/product-catalog/products/colors --->It is used to fetch products on the basis of colors.
+
+4.http://localhost:9999/product-catalog/products/price ---?API to fetch the products on the basis of price range(Min,Max)
+
+5.http://localhost:9999/product-catalog/products/sizes -->API to fetch the Products on the basis of Product Sizes(String)
+
+6.3.http://localhost:9999/product-catalog/products/{productsType} -->API to fetch Products on the basis of product type(ex.Shirt/Jeans/Caps),brand(optional) and Colors(optional)
+
+
+Assumptions:
+
+Endpoints are exposed on the basis of data in database.
+Suppose user wants to fetch products on the basis of brands(say ALLEN SOLLY) then user needs to hit url as (http://localhost:9999/product-catalog/products/brands?brands=ALLEN SOLLY).
+If user is hitting url as http://localhost:9999/product-catalog/products/brands?brands=Allen Solly  .Then user wont get any data back as Allen Solly is not in there in data base.
+
